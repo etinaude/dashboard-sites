@@ -64,7 +64,7 @@
       } else {
         frameB = await getNextSiteData();
       }
-    }, 500);
+    }, 1000);
   }
 
   onMount(async () => {
@@ -80,10 +80,10 @@
     <div class="viewport" transition:fade={{ duration: 100 }}>
       {#if frameA.type === "iframe"}
         IFRAME
-        <iframe src={frameA.url} title="site"></iframe>
+        <iframe src={frameA.url} title="site" loading="eager"></iframe>
       {:else}
         IMAGE
-        <img src={frameA.image} alt="site screenshot" />
+        <img src={frameA.image} alt="site screenshot" loading="eager" />
       {/if}
     </div>
     <div class="url-box">
@@ -92,9 +92,9 @@
   {:else}
     <div class="viewport" transition:fade={{ duration: 100 }}>
       {#if frameB.type === "iframe"}
-        <iframe src={frameB.url} title="site"></iframe>
+        <iframe src={frameB.url} title="site" loading="eager"></iframe>
       {:else}
-        <img src={frameB.image} alt="site screenshot" />
+        <img src={frameB.image} alt="site screenshot" loading="eager" />
       {/if}
       <div class="url-box">
         {frameB.url}
