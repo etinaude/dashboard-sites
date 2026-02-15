@@ -4,7 +4,7 @@
 
   let availableSites: string[] = [];
 
-  let delayTime = 5;
+  let delayTime = 20;
 
   type Frame = {
     type: "iframe" | "img";
